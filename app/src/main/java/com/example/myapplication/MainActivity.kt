@@ -14,12 +14,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.ViewModelProvider
 import com.example.myapplication.ui.theme.MyApplicationTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        val newsViewModel = ViewModelProvider(this)[NewsViewModel::class.java]
         setContent {
             MyApplicationTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
@@ -35,7 +37,7 @@ class MainActivity : ComponentActivity() {
                             fontSize = 25.sp,
                             fontFamily = FontFamily.Serif
                         )
-                        HomePage()
+                        HomePage(newsViewModel)
                     }
                 }
             }
