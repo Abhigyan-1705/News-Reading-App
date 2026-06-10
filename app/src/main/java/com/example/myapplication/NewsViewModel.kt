@@ -17,10 +17,11 @@ class NewsViewModel : ViewModel() {
         fetchNewsTopHeadLines()
     }
 
-    fun fetchNewsTopHeadLines() {
+    fun fetchNewsTopHeadLines(category: String = "GENERAL") {
         val newsApiClient = NewsApiClient(Constant.API_KEY)
         val request = TopHeadlinesRequest.Builder()
             .language("en")
+            .category(category)
             .build()
 
         newsApiClient.getTopHeadlines(request, object : NewsApiClient.ArticlesResponseCallback {
