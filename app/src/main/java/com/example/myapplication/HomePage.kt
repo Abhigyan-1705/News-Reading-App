@@ -37,11 +37,12 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import coil3.compose.AsyncImage
 import com.kwabenaberko.newsapilib.models.Article
 
 @Composable
-fun HomePage(newsViewModel: NewsViewModel) {
+fun HomePage(newsViewModel: NewsViewModel, navController: NavHostController) {
     val articles by newsViewModel.articles.observeAsState(emptyList())
 
     Column(
@@ -52,17 +53,22 @@ fun HomePage(newsViewModel: NewsViewModel) {
             modifier = Modifier.fillMaxSize()
         ) {
             items(articles) { article ->
-                ArticleItem(article)
+                ArticleItem(article, navController)
             }
         }
     }
 }
 
 @Composable
-fun ArticleItem(article: Article) {
+fun ArticleItem(article: Article, navController: NavHostController) {
     Card(
         modifier = Modifier.padding(8.dp),
-        elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
+        elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
+        onClick = {
+            article.url?.let {
+                navController.navigate(NewsArticleScreen(it))
+            }
+        }
     ) {
         Row(
             modifier = Modifier
@@ -135,7 +141,7 @@ fun CategroiesBar(newsViewModel: NewsViewModel) {
                 trailingIcon = {
                     IconButton(onClick = {
                         isSearchExpanded = false
-                        if(searchQuery.isNotEmpty()){
+                        if (searchQuery.isNotEmpty()) {
                             newsViewModel.fetchEverythingWithQuery(searchQuery)
                         }
                     }) {
