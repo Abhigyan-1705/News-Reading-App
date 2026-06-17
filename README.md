@@ -10,3 +10,14 @@ Daily Brief is a modern Android application built with **Kotlin**, **Jetpack Com
 4. 🌐 Read full articles inside the app using WebView
 5. 🧭 Type-safe navigation with Navigation Compose
 6. 🎨 Modern Material 3 UI built entirely with Jetpack Compose
+
+🛠️ Tech Stack
+
+▪ Language: Kotlin
+▪ UI: Jetpack Compose
+▪ Architecture: MVVM
+▪ Networking: NewsAPI Java Library
+▪ Navigation: Navigation Compose
+▪ Image Loading: Coil 3
+▪ Serialization: Kotlinx Serialization
+▪ Design System: Material 3
