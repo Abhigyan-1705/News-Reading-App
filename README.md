@@ -25,24 +25,19 @@ Daily Brief is a modern Android application built with **Kotlin**, **Jetpack Com
 
 ## 📁 Project Structure
 
+```text
 MyNewsApp/
 ├── app/
 │   ├── src/main/
 │   │   ├── java/com/example/myapplication/
-│   │   │   ├── ui/theme/
-│   │   │   ├── Constant.kt
-│   │   │   ├── HomePage.kt
-│   │   │   ├── MainActivity.kt
-│   │   │   ├── NewsArticlePage.kt
-│   │   │   ├── NewsViewModel.kt
-│   │   │   └── Route.kt
-│   │   ├── res/
-│   │   └── AndroidManifest.xml
+│   │   ├── Constant.kt
+│   │   ├── HomePage.kt
+│   │   ├── MainActivity.kt
+│   │   ├── NewsArticlePage.kt
+│   │   ├── NewsViewModel.kt
+│   │   └── Route.kt
 │   └── build.gradle.kts
-├── gradle/
-│   └── libs.versions.toml
 ├── build.gradle.kts
 ├── settings.gradle.kts
 └── README.md
-
-
+```
