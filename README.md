@@ -2,7 +2,7 @@
 
 Daily Brief is a modern Android application built with **Kotlin**, **Jetpack Compose**, and the **MVVM architecture**. It delivers real-time news headlines from around the world using the **NewsAPI**, offering a fast, clean, and user-friendly news reading experience. Users can browse news by category, search for articles, and read full stories directly within the app.
 
-✨ Features
+##✨ Features
 
 1. 📰 Real-time news headlines
 2. 📂 Browse news by category
@@ -11,7 +11,7 @@ Daily Brief is a modern Android application built with **Kotlin**, **Jetpack Com
 5. 🧭 Type-safe navigation with Navigation Compose
 6. 🎨 Modern Material 3 UI built entirely with Jetpack Compose
 
-🛠️ Tech Stack
+##🛠️ Tech Stack
 
 - **Language:** Kotlin
 - **UI:** Jetpack Compose
@@ -41,3 +41,48 @@ MyNewsApp/
 ├── settings.gradle.kts
 └── README.md
 ```
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+* Android Studio Ladybug (2024.2.1) or newer
+* NewsAPI API Key
+
+### Installation
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/Daily-Brief.git
+```
+
+2. Open the project in Android Studio.
+
+3. Add your NewsAPI key in `Constant.kt`
+
+```kotlin
+const val API_KEY = "YOUR_API_KEY"
+```
+
+4. Build and run the application.
+
+---
+
+## 🏗️ Architecture
+
+The application follows the **MVVM (Model-View-ViewModel)** architecture pattern.
+
+```text
+UI (Jetpack Compose)
+        │
+        ▼
+    ViewModel
+        │
+        ▼
+      NewsAPI
+```
+
+
